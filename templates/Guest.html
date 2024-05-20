@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/static/Gueststyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+</head>
+<style>
+    /* Media query for small screens */
+    @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start; /* Align items to the start */
+                padding: 10px; /* Adjust padding for better spacing */
+            }
+            .logo {
+                margin-bottom: 10px; /* Add spacing between logo and text */
+            }
+        }
+</style>
+<body >
+
+<div class="page-container" >
+
+<header>
+    <div class="logo">
+        <img src="/static/images/image-10.png" alt="Chatbot Logo">
+    </div>
+    <div class="chat-info">
+      Fatima Jinnah Women University</div>
+    
+    
+    <div class="actions" >
+        <button class="action-btn" title="Frequently asked questions" onclick="faq()">FAQ</button>
+        <button class="action-btn" >Live Chat</button>
+        <button class="action-btn"  onclick="gotofeedback()">Feedback</button>
+        
+        <div title=" restart" class="undo-btn" id="sound" onclick="restartChat()"> 
+          <img src= "/static/images/undo.png"
+              class="dpicn"
+              alt="sound"> 
+          </div>
+         
+          <div title="email" class="undo-btn" id="sound" onclick="email()"> 
+            <img src= "/static/images/at.png"
+                class="dpicn"
+                alt="sound"> 
+            </div>
+
+    </div>
+</header>
+
+<main>
+  <!-- chat area -->
+  <div class="chat-msg" >
+    <span class="material-symbols-outlined">smart_toy</span>
+    <div class="greetings">
+    
+    <b>Hello!<br/>How may I help you? </b>
+    </div>
+  <!-- Chat messages will be dynamically added here --><br>
+  <!-- <div class="specific">
+  <b>You may also select from below:</b><br>
+  <button class="k-btn">Department</button>
+  <button class="k-btn">Admission</button>
+  <button class="k-btn">Courses</button>
+  </div> -->
+  <div id="chat">
+  <ul class="chatbox">
+    <li class="chat incoming">
+     
+     
+    </li>
+    <li class="chat outgoing">
+        
+      </li>
+  </ul>
+</div>
+</div>
+
+
+
+<!-- text box , send button and speaker-->
+<div class="user-input-button">
+    <input  class="txt" id="user-input" name="user-input" placeholder="Type your message..." ></input>
+
+        <div class="send-btn" id="dp" onclick="sendMessage()"> 
+          <img src= "/static/images/message.png"
+              class="dpicn"
+              alt="dp"> 
+          </div> 
+          <div class="speaker-btn" id="sound" onclick="textToSpeech()"> 
+            <img src= "/static/images/sound.png"
+                class="dpicn"
+                alt="sound"> 
+            </div> 
+   
+</div>  
+
+    <select id="language-select" >
+      <option value="en">English</option>
+      <option value="es">Urdu</option>
+      <!-- Add more language options as needed -->
+  </select>
+</main>
+
+</div>
+</div>
+<!-- <script src="./script.js"></script>  -->
+
+
+<script>
+ 
+
+function restartChat() {
+    
+// Clear all messages in the chat container
+document.getElementById('chat').innerHTML = '';
+
+// Reset user input
+document.getElementById('user-input').value = '';
+
+// Reset focus to user input
+document.getElementById('user-input').focus();
+          
+        }
+
+
+function textToSpeech() {
+    // Implement logic for text to speech
+    // This can involve using a third-party API or browser's built-in speech synthesis
+}
+
+function showDepartment() {
+    // Implement logic to show department information
+}
+
+function showCourses() {
+    // Implement logic to show courses information
+}
+
+function showAdmission() {
+    // Implement logic to show admission information
+}
+function gotofeedback() {
+    window.location.href = "{{ url_for('feedback') }}";
+}
+function faq() {
+    window.location.href = "page_2.html";
+}
+
+
+     
+function appendMessage(role, text) {
+            const chatbox = document.querySelector('.chatbox');
+            const messageElement = document.createElement('li');
+            messageElement.classList.add('chat', role);
+            const paragraphElement = document.createElement('p');
+            paragraphElement.textContent = text;
+            messageElement.appendChild(paragraphElement);
+            chatbox.appendChild(messageElement);
+        }
+
+
+    
+
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            appendMessage('outgoing', userInput);
+            document.getElementById('user-input').value = '';
+
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const response = data.response;
+                appendMessage('incoming', response); // Display bot's response
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

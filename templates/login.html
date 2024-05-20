@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  
+  <style>
+    
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #458147;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #114613;
+}
+
+a {
+  text-align: center;
+  display: block;
+  color:#1c631e;
+  text-decoration: none;
+  margin-top: 12px;
+}
+.button{
+  color:#1c631e;
+}
+a:hover {
+  text-decoration: underline;
+}
+  </style>
+</body>
+</html>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form action="{{ url_for('login') }}" id="loginForm" method="post">
+      <div class="msg" style="color:red">{{msg}}</div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" value="Login" >
+    </form>
+    <a href="">Forgot Password?</a>
+  </div>
+
+
+  <!-- <script>
+    function validateLogin() {
+      // Hardcoded username and password (replace with your actual credentials)
+      var validUsername = "admin";
+      var validPassword = "admin123";
+
+      // Get user input
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Validate credentials
+      if (username === validUsername && password === validPassword) {
+        // Redirect to the dashboard page upon successful login
+        window.location.href = "dashboard.html";
+      } else {
+        // Display an alert for invalid credentials
+        alert("Invalid username or password.");
+      }
+    }
+  </script> -->
+</body>
+</html>
+
+  

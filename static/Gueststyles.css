@@ -1,0 +1,267 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+  min-height: 100vh;
+}
+
+header {
+  background-color:white;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+ width: 96%;
+ margin-left: 11px;
+}
+.page-container {
+  
+  padding: 15px;
+  height: flex;
+  background-color: #cff3b1;
+  
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+}
+.greetings{
+
+    background-color: #d0f0c0;
+    padding: 10px;
+    border-radius: 10px 10px 0 10px;
+    float: left;
+    clear: both;
+    margin-bottom: 5px;
+    max-width: 20%;
+
+}
+.specific{
+ 
+    background-color: #d0f0c0;
+    padding: 10px;
+    border-radius: 10px 10px 0 10px;
+    float: left;
+    clear: both;
+    margin-bottom: 5px;
+    max-width: 40%;
+
+}
+.message-container {
+  margin:top 10px; 
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+
+.user-input-button{
+  display: flex;
+  align-items: center;
+}
+.txt{
+ 
+  background: white;
+  border-radius: 20px;
+  margin-right: 20px;
+  padding: 15px;
+ 
+  width: 1020px;
+margin-bottom: 5px;
+  
+}
+.chat-info {
+  color: #070707;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 25px;
+  font-weight: 550;
+  position: absolute;
+  left: 130px;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.online-status {
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+}
+.undo-btn{
+  margin-right: 20px;
+  padding: 10px 10px;
+  background-color: #517534;;
+  
+  border-radius: 10px;
+  cursor: pointer;
+  height: 20px;
+  
+  
+}
+
+.undo-btn img{
+  width:30px;
+  height: 20px;
+}
+.action-btn:hover{
+  background-color: #b30404;
+}
+.undo-btn:hover{
+  background-color: #b30404;
+}
+.action-btn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #517534;;
+  
+  border-radius: 10px;
+  cursor: pointer;
+  height: 40px;
+  font-size: medium;
+}
+.k-btn {
+  margin-right: 10px;
+  padding: 8px 15px;
+  background-color: #517534;;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: medium;
+  margin-top: 10px;
+}
+.k-btn:hover{
+  background-color: #b30404;
+}
+.send-btn img{
+  width:30px;
+  height: 30px;
+}
+.speaker-btn img{
+  width:30px;
+  height: 30px;
+}
+.send-btn:hover{
+  background-color: #b30404;
+}
+.speaker-btn:hover{
+  background-color: #b30404;
+}
+.send-btn{
+ 
+  padding: 8px 15px;
+  
+  background-color: #9ed670;
+  align-items: txt;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 30px;
+  font-size: medium;
+  margin-right: 5px;
+}
+.speaker-btn{
+ 
+  padding: 8px 15px;
+  
+  background-color: #9ed670;
+  
+  border-radius: 15px;
+  cursor: pointer;
+  height: 30px;
+  font-size: medium;
+}
+main {
+  padding: 10px;
+  display: flex; flex-direction: column;
+ 
+}
+
+
+
+.chat-msg {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  height: 300px;
+  overflow-y: auto;
+}
+ .chatbox .chat{
+display: flex;
+list-style: none;
+ }
+ .chatbox .chat p {
+  white-space: pre-wrap;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 10px;
+  max-width: 75%;
+  color: black;
+  font-size: 0.95rem;
+  background: #d0f0c0;
+ 
+}
+.chatbox .incoming p {
+  color: #000;
+  background: #f2f2f2;
+}
+
+.chatbox .incoming p {
+  border-radius: 10px 10px 10px 0;
+ 
+}
+
+
+.chatbox .outgoing {
+  margin: 20px 0;
+  justify-content: flex-end;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 5px;
+}
+
+textarea {
+  flex: 1;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+button {
+  width: 10ox;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+select {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-btn {
+  cursor: pointer;
+}

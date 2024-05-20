@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-container {
+            margin-bottom: 10px;
+            overflow: auto;
+        }
+
+        .user-message {
+            background-color: #d1eaf9;
+            padding: 10px;
+            border-radius: 10px;
+            float: right;
+            clear: both;
+            margin-bottom: 5px;
+            max-width: 70%;
+        }
+
+        .bot-message {
+            background-color: #d0f0c0;
+            padding: 10px;
+            border-radius: 10px;
+            float: left;
+            clear: both;
+            margin-bottom: 5px;
+            max-width: 70%;
+        }
+
+        #user-input {
+            width: calc(100% - 75px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        #send-btn {
+            width: 70px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message-container" id="chat-messages">
+            <!-- Bot's initial greeting message -->
+            <div class="bot-message">Welcome! How can I assist you today?</div>
+        </div>
+
+        <textarea id="user-input" placeholder="Type your message..." style="background-color: #d1eaf9;"></textarea>
+        <button id="send-btn" onclick="sendMessage()">Send</button>
+        <button id="refresh-btn" onclick="refreshChat()">Refresh Chat</button>
+    </div>
+
+    <script>
+        function appendUserMessage(message) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageElement = document.createElement('div');
+            messageElement.className = 'user-message';
+            messageElement.textContent = message;
+            messagesContainer.appendChild(messageElement);
+        }
+
+        function appendBotMessage(message) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageElement = document.createElement('div');
+            messageElement.className = 'bot-message';
+            messageElement.textContent = message;
+            messagesContainer.appendChild(messageElement);
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            appendUserMessage(userInput);
+            document.getElementById('user-input').value = '';
+
+            // Simulate bot response (replace with actual bot response logic)
+            const botResponse = "This is a bot response.";
+            appendBotMessage(botResponse);
+        }
+
+        function refreshChat() {
+            // Clear all messages in the chat container
+            document.getElementById('chat-messages').innerHTML = '';
+
+            // Reset user input
+            document.getElementById('user-input').value = '';
+
+            // Reset focus to user input
+            document.getElementById('user-input').focus();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review and Experience</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #faf9f9; /* Green background color */
+        }
+
+        #reviewForm {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #reviews {
+            margin-top: 20px;
+        }
+
+        .review {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .timestamp {
+            color: #888;
+        }
+
+        .emoji {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="reviewForm">
+    <h1>How Satisfied Are You With The Conversation?</h1>
+    <!-- <textarea id="userReview" placeholder="Share your experience..."></textarea>
+    <br> -->
+    <form action="{{ url_for('submit_review') }}" id="reviewForm" method="post">
+        <textarea name="review_text" id="userReview" placeholder="Share your experience..."></textarea>
+        <input type="hidden" name="review_type" id="reviewType">
+        <input type="hidden" name="timestamp" id="timestamp">
+        <br>
+        <button type="submit" onclick="submitReview('good')">&#128077; Good</button>
+        <button type="submit" onclick="submitReview('average')">&#128528; Average</button>
+        <button type="submit" onclick="submitReview('bad')">&#128078; Bad</button>
+    </form>
+
+    <div id="reviews">
+        <!-- Reviews will be displayed here -->
+    </div>
+</div>
+
+<script>
+
+    
+    function submitReview(type) {
+        var reviewText = document.getElementById("userReview").value;
+
+        if (reviewText.trim() !== "") {
+            var timestamp = new Date().toLocaleString();
+            var reviewContainer = document.getElementById("reviews");
+
+            var reviewElement = document.createElement("div");
+            reviewElement.className = "review";
+
+            if (type === 'good') {
+                reviewElement.innerHTML = "<p><span class='emoji'>&#128077;</span><strong>Good:</strong> " + reviewText + "</p><p class='timestamp'>" + timestamp + "</p>";
+            } else if (type === 'average') {
+                reviewElement.innerHTML = "<p><span class='emoji'>&#128528;</span><strong>Average:</strong> " + reviewText + "</p><p class='timestamp'>" + timestamp + "</p>";
+            } else if (type === 'bad') {
+                reviewElement.innerHTML = "<p><span class='emoji'>&#128078;</span><strong>Bad:</strong> " + reviewText + "</p><p class='timestamp'>" + timestamp + "</p>";
+            }
+
+            reviewContainer.appendChild(reviewElement);
+
+            document.getElementById("reviewType").value = type;
+
+            document.getElementById("timestamp").value = timestamp;
+
+            // Clear the textarea after submission
+           // document.getElementById("userReview").value = "";
+        } else {
+            alert("Please enter a review before submitting.");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #88B460;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #88B460; /* Change background color to match header */
+    padding: 10px;
+    color: white;
+}
+
+.rectangle-box {
+    background-color: white;
+    border-radius: 20px;
+    height: 500px;
+    padding: 30px;
+    margin: 10px; /* Combine margin-left and margin-right into a single property */
+}
+.user-question {
+    background-color: white; /* Light grey background color */
+    margin: 15px;
+    height: 40px;
+    width: 98%;
+    border-radius: 20px;
+}
+
+.placeholder-text {
+    color: black;
+    font-style: italic;
+    margin: 8px;
+}
+.faq-section {
+    display:flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #36542E; 
+    color: white; 
+    margin: 20px;
+    height: 15px;
+    width: 90%;
+    border-radius: 20px;
+    justify-content: center;
+}
+.faq-section h2 {
+    color: white; 
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.arrow-link {
+    text-decoration: none; 
+    color: inherit;
+    display: flex;
+    align-items: center; 
+}
+img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+h1 {
+    margin-left: 60px;
+    margin-bottom: 30px;
+}
+
+main {
+    text-align: center;
+    margin: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.inner-container {
+    background-color: #88B460; /* Change background color to match header */
+    border-radius: 20px;
+    height: 250px;
+    margin: 20px; /* Combine margin-left and margin-right into a single property */
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    background-color: #36542E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #556B43; /* Change hover background color for better visibility */
+}

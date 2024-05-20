@@ -1,0 +1,173 @@
+.desktop-1,
+.desktop-1 * {
+  box-sizing: border-box;
+}
+.desktop-1 {
+  background: #ffffff;
+  width: 1250px;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  
+}
+.logo {
+  width: 50px;
+  height:50px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  object-fit: cover;
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+}
+header {
+  background-color:white;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+ width: 96%;
+ margin-left: 11px;
+}
+.text{
+  color: #070707;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 100px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.text2{
+  color: #070707;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rectangle-1 {
+  background: #517534;
+  
+  border-width: 1px;
+  width: 1250px;
+  height: 60px;
+  position: absolute;
+  left: 0px;
+  top: 125px;
+}
+
+.welcome-to-fjwu-virtual-assistant {
+  color: #f9f7f7;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  left: 385px;
+  top: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.how-do-you-want-to-use-the-chatbot {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  left: 368px;
+  top: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.group-1 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-2 {
+  border-radius: 0px;
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  left: 400px;
+  top: 400px;
+  overflow: visible;
+}
+.guest-button {
+  background-color: #517534;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 4px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px;
+}
+.guest-button:hover{
+  background-color: #45682f;
+}
+.group-2 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-3 {
+  background: #517534;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  left: 700px;
+  top: 404px;
+}
+.admin-button {
+  background-color: #517534;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 5px;
+  cursor: pointer;
+  width: 200px;
+  border-radius: 5px;
+}
+.admin-button:hover {
+  background-color: #45682f;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 360px;
+  top: 300px;
+  gap: 100px;
+}
